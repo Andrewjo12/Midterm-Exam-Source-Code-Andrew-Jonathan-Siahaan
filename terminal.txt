@@ -1,0 +1,78 @@
+PS C:\UTSMACHINEVISION> conda activate base
+conda : The term 'conda' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or 
+if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ conda activate base
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (conda:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\UTSMACHINEVISION> & C:/Users/DELL/anaconda3/python.exe c:/UTSMACHINEVISION/src/param.py
+=======================================================
+Program Klasifikasi EMNIST Dimulai pada Mon Nov  3 13:59:50 2025      
+Log Output: C:\UTSMACHINEVISION\data\archive\output\evaluation_log.txt
+=======================================================
+Memuat dan melakukan sampling data seimbang...
+Total sampel final: 13000 (26 kelas)
+
+---------- FASE UJI CEPAT: 5-FOLD CROSS VALIDATION ----------
+
+[HOG] Ekstraksi fitur: Orient=9, PPC=(6, 6), CPB=(2, 2)...
+Ekstraksi HOG: 100%|████████████████████████████████████████████████████████████████████████████████████████| 13000/13000 [00:05<00:00, 2198.18it/s] 
+Dimensi fitur HOG: (13000, 324)
+
+[K-FOLD CV] Memulai evaluasi cepat dengan 5-Fold (Kernel=linear, C=1.0)...
+
+--- Hasil Metrik Evaluasi K-Fold ---
+Waktu komputasi total: 22.43 detik
+Akurasi rata-rata (5-Fold): 82.08% ± 0.31%
+
+---------- FASE 2: EVALUASI LOOCV FINAL ----------
+
+[HOG] Ekstraksi fitur: Orient=9, PPC=(6, 6), CPB=(2, 2)...
+Ekstraksi HOG: 100%|████████████████████████████████████████████████████████████████████████████████████████| 13000/13000 [00:05<00:00, 2272.65it/s] 
+Dimensi fitur HOG: (13000, 324)
+
+[LOOCV] Memulai LOOCV FINAL (Kernel=linear, C=1.0)...
+PERINGATAN: LOOCV pada 13000 sampel akan memakan waktu LAMA (jam/hari).
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:  1.7min
+[Parallel(n_jobs=-1)]: Done 192 tasks      | elapsed:  7.3min
+[Parallel(n_jobs=-1)]: Done 442 tasks      | elapsed: 16.3min
+[Parallel(n_jobs=-1)]: Done 792 tasks      | elapsed: 28.9min
+[Parallel(n_jobs=-1)]: Done 1242 tasks      | elapsed: 45.0min
+[Parallel(n_jobs=-1)]: Done 1792 tasks      | elapsed: 64.8min
+[Parallel(n_jobs=-1)]: Done 2442 tasks      | elapsed: 88.0min
+[Parallel(n_jobs=-1)]: Done 3192 tasks      | elapsed: 115.0min
+[Parallel(n_jobs=-1)]: Done 4042 tasks      | elapsed: 145.5min
+C:\Users\DELL\anaconda3\Lib\site-packages\sklearn\svm\_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+C:\Users\DELL\anaconda3\Lib\site-packages\sklearn\svm\_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+[Parallel(n_jobs=-1)]: Done 4992 tasks      | elapsed: 179.7min
+C:\Users\DELL\anaconda3\Lib\site-packages\sklearn\svm\_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+C:\Users\DELL\anaconda3\Lib\site-packages\sklearn\svm\_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+C:\Users\DELL\anaconda3\Lib\site-packages\sklearn\svm\_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+C:\Users\DELL\anaconda3\Lib\site-packages\sklearn\svm\_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+C:\Users\DELL\anaconda3\Lib\site-packages\sklearn\svm\_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+[Parallel(n_jobs=-1)]: Done 6042 tasks      | elapsed: 217.2min
+[Parallel(n_jobs=-1)]: Done 7192 tasks      | elapsed: 261.9min
+[Parallel(n_jobs=-1)]: Done 8442 tasks      | elapsed: 390.1min
+[Parallel(n_jobs=-1)]: Done 9792 tasks      | elapsed: 444.5min
+[Parallel(n_jobs=-1)]: Done 11242 tasks      | elapsed: 507.7min
+[Parallel(n_jobs=-1)]: Done 12792 tasks      | elapsed: 575.7min
+[Parallel(n_jobs=-1)]: Done 13000 out of 13000 | elapsed: 585.0min finished
+
+--- Hasil Metrik Evaluasi LOOCV FINAL ---
+Waktu komputasi total LOOCV: 9.75 jam
+Akurasi LOOCV: 82.82%
+
+[VISUALISASI] Confusion Matrix disimpan ke: C:\UTSMACHINEVISION\data\archive\output\hasil confusion_matrix_hog_svm_linear.png
+
+--- EKSEKUSI PROGRAM SELESAI ---
+PS C:\UTSMACHINEVISION>  
