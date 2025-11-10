@@ -1,0 +1,33 @@
+=======================================================
+Program Klasifikasi EMNIST Dimulai pada Mon Nov  3 13:59:50 2025
+Log Output: C:\UTSMACHINEVISION\data\archive\output\evaluation_log.txt
+=======================================================
+Memuat dan melakukan sampling data seimbang...
+Total sampel final: 13000 (26 kelas)
+
+---------- FASE UJI CEPAT: 5-FOLD CROSS VALIDATION ----------
+
+[HOG] Ekstraksi fitur: Orient=9, PPC=(6, 6), CPB=(2, 2)...
+Dimensi fitur HOG: (13000, 324)
+
+[K-FOLD CV] Memulai evaluasi cepat dengan 5-Fold (Kernel=linear, C=1.0 )...
+
+--- Hasil Metrik Evaluasi K-Fold ---
+Waktu komputasi total: 22.43 detik
+Akurasi rata-rata (5-Fold): 82.08% � 0.31%
+
+---------- FASE 2: EVALUASI LOOCV FINAL ----------
+
+[HOG] Ekstraksi fitur: Orient=9, PPC=(6, 6), CPB=(2, 2)...
+Dimensi fitur HOG: (13000, 324)
+
+[LOOCV] Memulai LOOCV FINAL (Kernel=linear, C=1.0)...
+PERINGATAN: LOOCV pada 13000 sampel akan memakan waktu LAMA (jam/hari).
+
+--- Hasil Metrik Evaluasi LOOCV FINAL ---
+Waktu komputasi total LOOCV: 9.75 jam
+Akurasi LOOCV: 82.82%
+
+[VISUALISASI] Confusion Matrix disimpan ke: C:\UTSMACHINEVISION\data\archive\output\hasil confusion_matrix_hog_svm_linear.png
+
+--- EKSEKUSI PROGRAM SELESAI ---
